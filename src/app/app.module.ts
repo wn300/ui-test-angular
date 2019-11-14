@@ -10,11 +10,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 
 import { LayoutModule } from './layout/layout.module';
 import { AppComponent } from './app.component';
-// import { IndexModule } from './pages/index/index.module';
-// import { OperationModule } from './pages/operation/operation.module';
-// import { ProgramationModule } from './pages/programation/programation.module';
-// import { TraceabilityModule } from './pages/traceability/traceability.module';
-// import { UsersModule } from './pages/users/users.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,11 +20,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     LayoutModule,
-    // IndexModule,
-    // OperationModule,
-    // ProgramationModule,
-    // TraceabilityModule,
-    // UsersModule
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
