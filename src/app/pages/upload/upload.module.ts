@@ -7,8 +7,6 @@ import {
 import { CommonsComponentsModule } from "src/app/commons-components/commons-components.module";
 import { MatCardModule } from "@angular/material/card";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { MatTableModule } from "@angular/material/table";
-
 
 @NgModule({
   declarations: [UiUploadComponent, MessageComponent],
@@ -19,7 +17,6 @@ import { MatTableModule } from "@angular/material/table";
     CommonsComponentsModule,
     MatCardModule,
     MatSnackBarModule,
-    MatTableModule
   ]
 })
 export class UploadModule {}

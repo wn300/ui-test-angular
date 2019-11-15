@@ -1,11 +1,16 @@
-import { Component, OnInit, OnDestroy, Input, ViewChild, DoCheck } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+} from "@angular/core";
 import { FileUploadService } from "src/app/services/shared/file-upload/file-upload.service";
 import { Subscription } from "rxjs";
 import { EmployeesService } from "src/app/services/http-api/employees/employees.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
-import {MatTableDataSource} from '@angular/material/table';
-import { Employee } from 'src/app/models/employee.model';
+import { MatTableDataSource } from "@angular/material/table";
+import { Employee } from "src/app/models/employee.model";
+import { DatatableService } from 'src/app/services/shared/datatable/datatable.service';
 
 @Component({
   selector: "app-ui-upload",
@@ -17,15 +22,15 @@ export class UiUploadComponent implements OnInit, OnDestroy {
   public filequotation = "excel_upload";
   private subscription: Subscription;
   private objectFile: FormData = new FormData();
-
-  displayedColumns: string[] = ['name', 'last_name', 'identification', 'phone', 'email'];
-
-  public dataSource: MatTableDataSource<Employee> = new MatTableDataSource<Employee>([]);
+  public dataSource: MatTableDataSource<Employee> = new MatTableDataSource<
+    Employee
+  >([]);
 
   constructor(
     public fileUploadService: FileUploadService,
     public employeesService: EmployeesService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    public datatableService: DatatableService
   ) {
     this.subscription = this.fileUploadService
       .getObjetFile()
@@ -34,16 +39,14 @@ export class UiUploadComponent implements OnInit, OnDestroy {
         this.employeesService
           .uploadFile(this.objectFile)
           .subscribe((data: any) => {
-            
             this.dataSource = new MatTableDataSource<Employee>(data);
+            this.datatableService.setPrintDataTable(data);
             this.openSnackBar();
-
           });
       });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
@@ -59,9 +62,7 @@ export class UiUploadComponent implements OnInit, OnDestroy {
 @Component({
   selector: "snack-bar-component-example-snack",
   template: `
-    <span>
-      {{ message }} 👍🏽 👍🏽 👍🏽
-    </span>
+    <span> {{ message }} 👍🏽 👍🏽 👍🏽 </span>
   `
 })
 export class MessageComponent {
