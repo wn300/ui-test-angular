@@ -1,5 +1,8 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <layout-header (toggleEmit)="emitAction($event)" [medyaQueryParent]="mobileQuery"></layout-header>
+  <layout-header
+    (toggleEmit)="emitAction($event)"
+    [medyaQueryParent]="mobileQuery"
+  ></layout-header>
   <mat-sidenav-container
     class="example-sidenav-container"
     [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
@@ -14,7 +17,9 @@
       <layout-nav-menu></layout-nav-menu>
     </mat-sidenav>
     <mat-sidenav-content>
-      <router-outlet></router-outlet>
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

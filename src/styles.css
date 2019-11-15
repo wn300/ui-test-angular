@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -40,10 +41,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 
   .active-list-item {
-    color: #c2185b !important; /* Note: You could also use a custom theme */
+    color: #c2185b !important; 
   }
 
-  .pd-10-right{
+  .progress-bar {
+    background-color: #c2185b !important;
+}
+
+  .pdright{
     padding-right: 10px;
   }
+
+
   

@@ -7,7 +7,7 @@ import { MediaMatcher } from "@angular/cdk/layout";
   template: `
       <mat-nav-list>
         <a mat-list-item [routerLink]="nav.route" routerLinkActive="active-list-item" *ngFor="let nav of fillerNav">
-          <mat-icon class="pd-10-right" aria-hidden="false" aria-label="Example home icon">{{
+          <mat-icon class="pdright" aria-hidden="false" aria-label="Example home icon">{{
             nav.icon
           }}</mat-icon>
         {{ nav.name }}</a
@@ -30,12 +30,12 @@ export class LayoutNavMenuComponent {
     this.fillerNav = [
       {
         icon: "cloud_upload",
-        name: "Subir Archivo",
+        name: "Cargar Empleados",
         route: "upload"
       },
       {
         icon: "cloud_download",
-        name: "Bajar Archivo",
+        name: "Descargar Empleados",
         route: "download"
       }
     ];
