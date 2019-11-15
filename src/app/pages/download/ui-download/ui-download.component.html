@@ -1,1 +1,16 @@
-<p>ui-download works!</p>
+<mat-card class="example-card mt-5">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Ver empleados</mat-card-title>
+    <mat-card-subtitle>Descargar archivo</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="objectEmployee.length > 0">
+      <div class="example-button-row">
+        <button mat-flat-button color="primary" (click)="getFile()">Importar a Excel</button>
+      </div>
+    </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+<mat-card class="example-card mt-2">
+  <app-data-table></app-data-table>
+  <label *ngIf="objectEmployee.length == 0">No existen empleados</label>
+</mat-card>

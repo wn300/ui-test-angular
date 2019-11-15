@@ -1,5 +1,4 @@
 export const environment = {
   production: true,
-  path:'',
-  api:''
+  path:'https://api-test-intelbpo.herokuapp.com/api'
 };

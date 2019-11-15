@@ -29,7 +29,6 @@ export class DataTableComponent implements OnInit {
   ngOnInit() {}
 
   printData(data) {
-    console.log(data);
     this.dataSource = new MatTableDataSource<Employee>(data);
   }
 

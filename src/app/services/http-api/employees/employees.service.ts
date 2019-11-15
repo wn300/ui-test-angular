@@ -21,4 +21,11 @@ export class EmployeesService {
       map((data) => data)
     );
   }
+
+  getFile(){
+    return this.http.get(`${environment.path}/employees/file`).pipe(
+      map((data) => data)
+    );
+  }
+  
 }
